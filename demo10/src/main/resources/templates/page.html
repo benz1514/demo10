@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<meta charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org" > 
+<head> 
+    <title>Thymeleaf</title> 
+</head> 
+<body> 
+    <span>เพิ่มข้อมูล</span> <p th:text="${name}"></p>
+    <form action="/user/save" method="POST">
+        <label for="username">Input username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Input password:</label>
+        <input type="text" id="password" name="password"><br><br>
+        <label for="age">Input age:</label>
+        <input type="indeger" id="age" name="age"><br><br>
+        <label for="brithdate">Input brithdate:</label>
+        <input type="date" id="brithdate" name="brithdate"><br><br>
+        <input type="submit" value="Submit">
+      </form> 
+    <table>
+      <tr><td>id</td><td>username</td><td>password</td></tr>
+      <tr th:each ="userEntity:${userEntity}">
+          <td><p th:text="${userEntity.id}"></p></td>
+          <td><p th:text="${userEntity.username}"></p></td>
+          <td><p th:text="${userEntity.password}"></p></td>
+          <td></td>
+      </tr></table>
+      <p th:text="${x}"></p>
+</body> 
+</html>
